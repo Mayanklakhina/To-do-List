@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //to connect the mongoose to the database i.e. mongoDB.
-mongoose.connect('mongodb://localhost/todo_list_db');
+mongoose.connect(process.env.MONGO_URL);
 
 //localhost defines that server data is running on your system and mongodb is the database running 
 //on your system and todo_list_db is the name of the database which is of my choice.

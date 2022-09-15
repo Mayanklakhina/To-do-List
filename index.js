@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const port = 8000;
+// const port = 8000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -26,7 +26,7 @@ app.use(express.static('./assets'));
 
 
 //to listen on the port
-app.listen(port,function(err){
+app.listen(process.env.PORT || 8000,function(err){
     if(err){
         console.log(`There is some error in running the server:${err}`);
     }
