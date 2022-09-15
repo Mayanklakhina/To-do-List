@@ -1,0 +1,272 @@
+body{
+    background-color:#434244;
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:65%;
+    border:3px solid rgb(192, 191, 191);
+    margin-left:auto;
+    margin-right:auto;
+
+}
+#heading{
+    text-align: center;
+    
+}
+main{
+    background-color: #252c3a;
+}
+
+/* Styling the description container */
+
+.description-container{
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    height:15%;
+    width:auto;
+}
+
+#header{
+    margin-left:2%;
+}
+
+#details{
+    width:48%;
+    height:25%;
+    font-size:1rem;
+    margin-left:2%;
+    background-color:white;
+    font-weight: bold;
+    border:none;
+    padding-left:6px;
+    transition: all ease-in-out 0.2s;
+    border-radius: 0.3rem;
+}
+input:focus{
+    outline:none;
+    border:none;
+}
+
+/* Outer Div for the categories and due date */
+
+.c-d{
+    width:auto;
+    height: 12%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;          /*to align the categories and due date row-wise*/
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+/* starting with the categories first */
+
+.option-div{
+    height:auto;
+    width:40%;
+    line-height: 0rem;
+}
+
+#category{
+    margin-left:5%;
+}
+#drop-down-list{
+    border:none;
+    width:60%;
+    height:30%;
+    font-size:0.9rem;
+    margin-left:5%;
+    font-weight: bold;
+    background-color:white;
+    padding-left: 6px;
+    cursor: pointer;
+     transition: all ease-in-out 0.2s;
+     border-radius: 0.3rem;
+}
+
+
+/* starting with due date now */
+
+.date-container{
+    
+    height:auto;
+    width:40%;
+    line-height: 0rem;
+}
+
+#date{
+    border:none;
+    background-color:white;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height:30%;
+    padding-left: 6px;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+input:focus{
+    outline:none;
+}
+
+/* BUTTONS */
+
+
+/* Add Button */
+
+.buttons #add{
+    width:180px;
+    height:60px;
+    background:linear-gradient(#08610c,#105213);
+    color:white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left:37.5%;
+    cursor:pointer;
+    border-radius:0.2rem;
+    transition: all ease-in-out 0.5s;
+}
+svg {
+    position: absolute;
+    left: 43.6%;
+    top: 44.1%;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+  }
+  
+/* effect when we hover over the button */
+.buttons #add:hover{
+   background: linear-gradient(#105213,#08610c);
+   transition: 1s ease-in-out;
+   
+}
+.buttons #add:hover svg {
+    stroke-dashoffset: -480;
+}
+
+  
+#add-text{
+    padding-left: 6px;
+    font-weight: bold;
+}
+
+
+/* Delete Button */
+#delete-button{
+    width:184px;
+    height:60px;
+    background:linear-gradient(#dc291c,#c6261a);
+    color:white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left:36.8%;
+    margin-bottom:15px;
+    cursor:pointer;
+    border-radius:0.2rem;
+    transition: all ease-in-out 0.5s;
+
+}
+ #delete-button:hover{
+    background:linear-gradient(#c6261a,#dc291c);
+}
+
+#delete-text{
+    padding-left:20px;
+    font-weight: bold;
+}
+
+ /*Lower part styling  */
+
+#lower-part{
+    
+    background: #2a2626;
+    /* #282b37; */
+    border-top:3px solid white;
+    border-bottom: 3px solid white;
+    width:100%;
+     height:auto;
+}
+#lists{
+    width:100%; 
+    height:70%;
+    overflow-y: scroll;
+}
+
+/* To hide the scrollbar */
+
+#lists::-webkit-scrollbar{
+	display: none;
+}
+
+
+ li {
+    border-radius: 3px;
+    position: relative;
+    left: -30px;
+    margin-top: 5px;
+    width: 100%;
+    height: 25%;
+    border-bottom: 1px solid rgb(223, 218, 218);
+    list-style: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.2rem;
+ }
+ 
+
+ .check-button{
+    display:flex; 
+    flex-direction: row;
+    position: relative;
+    top:25px;
+ }
+ .task-description{
+    display:inline-block;
+    width:70%; 
+    height:70%; 
+    position: relative; 
+    top:-10px;
+ }
+ .task-details{
+    margin-left:15px;
+     position: relative; 
+     top:-5px;
+ }
+ .task-details .task-name{
+    line-height: 45px;
+ }
+
+
+
+.list-category {
+    position: relative;
+    left: 100px;
+    top: -60px;
+    transition: all ease-in-out 0.5s;
+    float: right;
+    width: 100px;
+    text-align: center;
+    background-color:#57316f;
+    border-radius: 3px;
+    border:1px solid white;
+}
+.list-category:hover {
+    box-shadow: 0px 0px 3px 4px rgb(209, 72, 62);
+}
+
+#category-box-text {
+    font-weight: bolder;
+    color:white;
+    font-size: 16px;
+}
+
+/* when we click on checkbox button do this */
+ul li div{
+    text-decoration: none;
+}
+
+ul li input[type=checkbox]:checked ~ div {
+    text-decoration: line-through;
+    }

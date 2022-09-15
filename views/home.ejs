@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <title>
+      <%= title %>
+      </title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- To add the favicon -->
+      <link rel="shortcut icon" type="image/x-icon" href="Images/fav.ico">
+
+      <!-- linking with css file -->
+      <link rel="stylesheet" href="/CSS/home.css">
+      <!-- link to add icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        
+
+    </header>
+
+        <main>
+            <header>
+                <h1 id="heading"> 
+            <i class="fa fa-list"></i>
+            <span>TODO LIST APP</span>
+            </h1>
+            
+    
+        </header>
+    
+
+        
+            <form method="POST" action="/add-task">
+
+                 <!-- Description Box  -->
+                <div class="description-container">
+
+                <h3 id="header">DESCRIPTION</h3>
+
+                <input id="details" name="task" placeholder="What do you want to do?" required>
+                </div>
+
+                <!-- Category and Date Box -->
+
+                <div class="c-d">
+
+                <div class="option-div">
+                
+                <h4 id="category">CATEGORY</h4>
+                
+                
+                <select id="drop-down-list" name="category" required>
+
+                <option value="Choose a category">Choose a category</option>
+                <option value="Personal">Personal</option>
+                <option value="School">School</option>
+                
+                <option value="Professional">Professional</option>
+                <option value="College">College</option>
+                <option value="Home">Home</option>
+                
+                <option value="Other">Other</option>
+                </select>
+                </div>
+                
+                <hr>
+
+                <div class="date-container">
+
+                <h4>DUE DATE</h4>
+                <br>
+                <input type="date" id="date" name="date" required>
+                </div>
+
+                </div>
+                <br>
+                <br>
+
+                <div class="buttons">
+                    
+                <i class="fa fa-plus" style="    position: relative;
+                left:41.5%; color:white; font-size:25px;">
+                </i>
+                <button id="add" type="submit">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                      </svg>
+                  
+                    <span id="add-text">Add Task</span>
+                </button>
+                
+            
+                
+                </div>
+            </form>
+
+
+            <!-- Tasks list in the lower part -->
+
+             <div id="lower-part"> 
+                <div id="lists">
+                   <!-- <h1 style="text-align: center; position: relative; top:150px;">
+                        You don't have any tasks to do yet.</h1>-->
+                    <ul>
+                        <form action="/delete-task" method="GET" >
+                            <li>
+                                <!-- Using the same classes as given to the main todo's list 
+                                to add same styles -->
+                                <span class="check-button">
+                                    <input type="checkbox"> &nbsp; &nbsp;
+                                    
+                                    <div class="task-description">
+
+                                        <div class="task-details">
+                                       <span class="task-name">
+                                           Why not add a task?
+                                           </span>
+                                           <span class="deadline" style="display: block; font-size: 15px;" >
+            
+                                            <i class="fa fa-calendar" >
+        
+                                            </i> &nbsp;
+        
+                                         <span class="task-data-value">No Deadline</span>
+                                        </span>
+
+        
+                                    </div>
+                                </span>
+                                
+
+                                
+                            </li>
+                            
+
+                            <!-- Showing the data on the homepage which will be stored in the database -->
+                            <% for(let i of tasks){%>
+                                <li>
+                                    <span class="check-button">
+                                    <input type="checkbox" name="<%= i._id %>" id="cb">
+                                &nbsp; &nbsp;
+
+                                    <div class="task-description">
+
+                                 <div class="task-details">
+                                <span class="task-name">
+                                <%= i.task %>
+                                 </span>
+        
+                                <span class="deadline" style="display: block; font-size: 15px;" >
+            
+                                    <i class="fa fa-calendar" >
+
+                                    </i> &nbsp;
+
+                                 <span class="task-data-value"><%= i.date %></span>
+                                </span>
+
+                            </div>
+                        
+                    <div class="list-category">
+
+                        <p id="category-box-text">
+                            <%= i.category %>
+                        </p>
+
+                    </div>
+                </span>
+
+                
+
+                    </li>
+                <%} %>
+    
+                            
+                </ul>
+
+                </div>
+
+            </div>
+            
+            <br>
+
+                        <i class="fa fa-trash-o" style=" position: relative; 
+                            left:40%; color:white; font-size: 25px;">
+                            </i>
+                            <button id="delete-button" type="submit">
+                              <span id="delete-text">Delete Tasks</span>
+                            </button>
+                        </form>
+                        
+                            
+                        </main>
+
+                        <!-- Linking with js file -->
+                        <script type="text/javascript" src="/JS/home.js">
+		                </script>
+
+        </body>
+</html>
